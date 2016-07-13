@@ -21,7 +21,7 @@ node_modules
 jspm_packages
 
 # Processed JS files
-/app/www/js
+www/js
 
 # Optional npm cache directory
 .npm
