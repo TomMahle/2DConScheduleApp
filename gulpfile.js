@@ -6,6 +6,11 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var browserifyBuild = require('ionic-gulp-browserify-es2015');
+var runSeq = require('run-sequence')
+
+gulp.task('heroku:production', function(){
+  runSeq('build')
+})
 
 var paths = {
   es6: ['./src/es6/*.js'],
