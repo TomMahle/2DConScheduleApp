@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 angular.module('starter.services', [])
 
 .factory('Events', function() {
@@ -7,15 +9,15 @@ angular.module('starter.services', [])
   var events = [{
     id: 0,
     name: 'Chris Kluwe and Andrew Reiner Keynote',
-    //startTime: moment('2016-06-04T11:00:00').calendar(),
-    //endTime: moment('2016-06-04T13:00:00').calendar(),
+    startTime: moment('2016-07-14T11:00:00'),
+    endTime: moment('2016-06-04T13:00:00'),
     description: 'Our guests of honor wax poetic about what it is to be a gamer. The entire scope of gaming\'s present, past, and future will be their playground.',
     face: 'img/KluweKarmaTrain.gif'
   }, {
     id: 1,
     name: 'Super Smash Bros 4 / Melee Tournaments',
-    startTime:'2016-06-04T13:00:00',
-    endTime:'2016-06-04T17:30:00',
+    startTime: moment('2016-06-04T13:00:00'),
+    endTime: moment('2016-06-04T17:30:00'),
     description: 'People fight each other with gaming\'s most epic icons. Prizes are at stake here, people. Prizes!!',
     face: 'img/smashbros.png'
   },
@@ -35,6 +37,6 @@ angular.module('starter.services', [])
         }
       }
       return null;
-    }
+    },
   };
 });

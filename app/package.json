@@ -15,6 +15,8 @@
     "gulp-babel": "^6.1.2",
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^2.2.14",
+    "ionic-gulp-browserify-es2015": "^1.1.0",
+    "moment": "^2.14.1",
     "shelljs": "^0.3.0"
   }
 }

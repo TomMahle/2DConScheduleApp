@@ -1,26 +1,34 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
-var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
-var babel = require('gulp-babel');
-var plumber = require('gulp-plumber');
+var browserifyBuild = require('ionic-gulp-browserify-es2015');
 
 var paths = {
   es6: ['./src/es6/*.js'],
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['babel', 'sass']);
+gulp.task('default', ['build', 'sass']);
 
-gulp.task('babel', function () {
-  return gulp.src(paths.es6)
-    .pipe(plumber())
-    .pipe(babel({presets: ['es2015']}))
-    .pipe(gulp.dest('www/js'));
+const browserifyOptions = {
+    src: ['./src/es6/app.js', './src/es6/services.js', './src/es6/controllers.js','./src/es6/dateHelper.js'],
+    outputPath: './www/js',
+    //browserifyOptions: { debug: false } //if you want to disable sourcemaps
+};
+
+gulp.task('build', function(){
+  return  browserifyBuild(browserifyOptions)
+});
+ 
+gulp.task('buildWatch', function(){
+  return browserifyBuild(
+    Object.assign({}, 
+    browserifyOptions, 
+    {watch: true}));
 });
 
 gulp.task('sass', function(done) {
@@ -37,7 +45,7 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.es6, ['babel']);
+  gulp.watch(paths.es6, ['build']);
   gulp.watch(paths.sass, ['sass']);
 });
 

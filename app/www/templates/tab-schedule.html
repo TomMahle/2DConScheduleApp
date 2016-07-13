@@ -4,6 +4,7 @@
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="event in events" type="item-text-wrap" href="#/tab/events/{{event.id}}">
         <img ng-src="{{event.face}}">
         <h2>{{event.name}}</h2>
+        <p>{{displayEventDate(event)}}</p>
         <p>{{event.description}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
 

@@ -8,7 +8,8 @@
   <ion-content class="padding">
     <img ng-src="{{event.face}}" style="width: 64px; height: 64px">
     <p>
-      {{event.description}}
+      <p>{{displayEventDate(event)}}</p>
+      <p>{{event.description}}</p>
     </p>
   </ion-content>
 </ion-view>
