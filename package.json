@@ -3,7 +3,7 @@
     "start": "node server",
     "postinstall": "gulp default"
   },
-  "name": "2dcon",
+  "name": "2DConSchedule",
   "version": "1.1.1",
   "description": "2DCon: An Ionic project",
   "dependencies": {

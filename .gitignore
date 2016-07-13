@@ -16,6 +16,9 @@ pids
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+# Other platforms. ATM let's not customize these so that we don't need to worry about keeping them in check.
+platforms
+
 # Dependency directories
 node_modules
 jspm_packages

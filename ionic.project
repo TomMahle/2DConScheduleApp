@@ -1,5 +1,5 @@
 {
-  "name": "2DCon",
+  "name": "2DConSchedule",
   "app_id": "",
   "gulpStartupTasks": [
     "sass",
