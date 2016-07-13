@@ -1,4 +1,9 @@
 {
   "name": "2DCon",
-  "app_id": ""
+  "app_id": "",
+  "gulpStartupTasks": [
+    "babel",
+    "sass",
+    "watch"
+  ]
 }

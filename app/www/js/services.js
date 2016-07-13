@@ -1,6 +1,6 @@
-angular.module('starter.services', [])
+'use strict';
 
-.factory('Events', function() {
+angular.module('starter.services', []).factory('Events', function () {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
@@ -14,21 +14,20 @@ angular.module('starter.services', [])
   }, {
     id: 1,
     name: 'Super Smash Bros 4 / Melee Tournaments',
-    startTime:'2016-06-04T13:00:00',
-    endTime:'2016-06-04T17:30:00',
+    startTime: '2016-06-04T13:00:00',
+    endTime: '2016-06-04T17:30:00',
     description: 'People fight each other with gaming\'s most epic icons. Prizes are at stake here, people. Prizes!!',
     face: 'img/smashbros.png'
-  },
-  ];
+  }];
 
   return {
-    all: function() {
+    all: function all() {
       return events;
     },
-    remove: function(chat) {
+    remove: function remove(chat) {
       events.splice(events.indexOf(chat), 1);
     },
-    get: function(eventId) {
+    get: function get(eventId) {
       for (var i = 0; i < events.length; i++) {
         if (events[i].id === parseInt(eventId)) {
           return events[i];
