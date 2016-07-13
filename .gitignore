@@ -10,9 +10,6 @@ pids
 *.pid.lock
 
 
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
-
 # node-waf configuration
 .lock-wscript
 
@@ -24,7 +21,7 @@ node_modules
 jspm_packages
 
 # Processed JS files
-www/js
+/app/www/js
 
 # Optional npm cache directory
 .npm
