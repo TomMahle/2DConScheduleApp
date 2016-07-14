@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/npm.git"
+    "url": "https://github.com/TomMahle/2DConScheduleApp.git"
   },
   "version": "1.1.1",
   "description": "2DCon: An Ionic project",
@@ -26,11 +26,11 @@
     "ionic-gulp-browserify-es2015": "^1.1.0",
     "moment": "^2.14.1",
     "run-sequence": "^1.2.2",
-    "shelljs": "^0.3.0"
-  },
-  "devDependencies": {
-    "chai": "^3.5.0",
+    "shelljs": "^0.3.0",
     "gulp-mocha": "^2.2.0",
     "mocha": "^2.5.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0"
   }
 }
