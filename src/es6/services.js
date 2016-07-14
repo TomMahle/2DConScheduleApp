@@ -9,7 +9,7 @@ angular.module('starter.services', [])
   var events = [{
     id: 0,
     name: 'Chris Kluwe and Andrew Reiner Keynote',
-    startTime: moment('2016-07-14T11:00:00'),
+    startTime: moment('2016-06-04T11:00:00'),
     endTime: moment('2016-06-04T13:00:00'),
     description: 'Our guests of honor wax poetic about what it is to be a gamer. The entire scope of gaming\'s present, past, and future will be their playground.',
     face: 'img/KluweKarmaTrain.gif'
