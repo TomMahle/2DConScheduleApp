@@ -1,4 +1,4 @@
-import {displayDatesForEvent} from './dateHelper';
+import {timeRangeToDisplayString} from './dateHelper';
 
 angular.module('starter.controllers', [])
 
@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.displayEventDate = displayDatesForEvent;
+  $scope.timeRangeToDisplayString = timeRangeToDisplayString;
   $scope.events = Events.all();
   $scope.remove = function(event) {
     Events.remove(event);
@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
 
 .controller('EventDetailCtrl', function($scope, $stateParams, Events) {
   $scope.event = Events.get($stateParams.eventId);
-  $scope.displayEventDate = displayDatesForEvent;
+  $scope.timeRangeToDisplayString = timeRangeToDisplayString;
 })
 
 .controller('AccountCtrl', function($scope) {

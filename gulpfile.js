@@ -6,7 +6,9 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var browserifyBuild = require('ionic-gulp-browserify-es2015');
-var runSeq = require('run-sequence')
+var runSeq = require('run-sequence');
+var glob = require('glob');
+var mocha = require('gulp-mocha');
 
 gulp.task('heroku:production', function(){
   runSeq('build')
@@ -17,22 +19,48 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['build', 'sass']);
+gulp.task('default', ['watch']);
 
-const browserifyOptions = {
-    src: ['./src/es6/app.js', './src/es6/services.js', './src/es6/controllers.js','./src/es6/dateHelper.js'],
+const srcFiles = glob.sync(
+    './src/**/*.js',
+    {
+      ignore:['./src/**/*.spec.js']
+    }
+  );
+const testFiles = glob.sync('./src/**/*.spec.js');
+
+const browserifySrcOptions = {
+    src: srcFiles,
     outputPath: './www/js',
-    //browserifyOptions: { debug: false } //if you want to disable sourcemaps
+    //browserifyOptions: { debug: false } //if you want to disable sourcemaps... This should have some production flag on it.
+};
+
+const browserifyTestOptions = {
+    src: testFiles,
+    outputPath: './bundledTests',
+    browserifyOptions: { debug: false } //if you want to disable sourcemaps... This should have some production flag on it.
 };
 
 gulp.task('build', function(){
-  return  browserifyBuild(browserifyOptions)
+  return  browserifyBuild(browserifySrcOptions)
 });
+
+gulp.task('buildTests', function(){
+  return  browserifyBuild(browserifyTestOptions)
+});
+
+gulp.task('runTests', function(){
+  return gulp
+    .src('./bundledTests/app.bundle.js', {read:false})
+    .pipe(mocha({reporter: 'nyan'}));
+});
+
+gulp.task('test', ['buildTests', 'runTests']);
  
 gulp.task('buildWatch', function(){
   return browserifyBuild(
     Object.assign({}, 
-    browserifyOptions, 
+    browserifySrcOptions, 
     {watch: true}));
 });
 

@@ -1,7 +1,3 @@
-export function displayDatesForEvent(event){
-    const {
-        startTime,
-        endTime
-    } = event;
+export function timeRangeToDisplayString(startTime, endTime){
     return `${startTime.format('LLLL')} - ${endTime.format('LT')}`;
 };
