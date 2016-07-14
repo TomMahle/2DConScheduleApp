@@ -49,7 +49,7 @@ gulp.task('buildTests', function(){
   return  browserifyBuild(browserifyTestOptions)
 });
 
-gulp.task('runTests', function(){
+gulp.task('runTests', ['buildTests'], function(){
   return gulp
     .src('./bundledTests/app.bundle.js', {read:false})
     .pipe(mocha({reporter: 'nyan'}));
