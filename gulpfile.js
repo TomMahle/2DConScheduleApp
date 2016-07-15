@@ -56,6 +56,10 @@ gulp.task('runTests', ['buildTests'], function(){
 });
 
 gulp.task('test', ['buildTests', 'runTests']);
+
+gulp.task('tdd', ['test'], function() {
+  gulp.watch(paths.es6, ['buildTests', 'runTests'])
+});
  
 gulp.task('buildWatch', function(){
   return browserifyBuild(
