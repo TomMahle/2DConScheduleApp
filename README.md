@@ -5,7 +5,9 @@
 * VS Code / some nice text editor
 * ConEmu / some command prompt you're happy with
 * Git + some client
-* node and then run:
+* node 
+
+Once Node is installed, open a command prompt and run the following commands:
 * npm install ionic -g
 * npm install gulp -g
 * npm install cordova -g
