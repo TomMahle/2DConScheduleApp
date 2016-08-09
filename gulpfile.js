@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-clean-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var browserifyBuild = require('ionic-gulp-browserify-es2015');
@@ -12,14 +12,14 @@ var mocha = require('gulp-mocha');
 
 gulp.task('heroku:production', function(){
   runSeq('build')
-})
+});
 
 var paths = {
   es6: ['./src/es6/*.js'],
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['buildWatch']);
 
 const srcFiles = glob.sync(
     './src/**/*.js',
