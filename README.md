@@ -1,5 +1,7 @@
-# 2DConScheduleApp
+# THIS HAS BEEN DEPRECATED
+Please reach out if you'd like to get involved and we'll get you access to the new repository :)
 2D Con should really have a schedule app. Let's make one.
+
 
 ## Things you'll need/want:
 * VS Code / some nice text editor
